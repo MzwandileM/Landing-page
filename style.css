@@ -933,6 +933,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .copyrights {
+    padding-top: 0.5rem;
     color: #525050;
     font-size: 0.86rem;
 }
@@ -1491,5 +1492,102 @@ h1, h2, h3, h4, h5, h6 {
  
     .hero_content p {
         font-size: 1.1rem;
+    }
+}
+
+/* =========================
+   SCROLL ANIMATIONS
+========================= */
+
+.scroll-fade-up {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.scroll-fade-up.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+.scroll-left {
+    opacity: 0;
+    transform: translateX(-50px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.scroll-left.show {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+
+.scroll-right {
+    opacity: 0;
+    transform: translateX(50px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.scroll-right.show {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+
+.scroll-scale {
+    opacity: 0;
+    transform: scale(0.92);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.scroll-scale.show {
+    opacity: 1;
+    transform: scale(1);
+}
+
+
+.scroll-fade {
+    opacity: 0;
+    transition: opacity 0.8s ease;
+}
+
+.scroll-fade.show {
+    opacity: 1;
+}
+
+
+/* =========================
+   STAGGER
+========================= */
+
+.scroll-stagger > * {
+    opacity: 0;
+    transform: translateY(35px);
+    transition:
+        opacity 0.7s ease,
+        transform 0.7s ease;
+}
+
+.scroll-stagger > *.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* =========================
+   ACCESSIBILITY
+========================= */
+
+@media (prefers-reduced-motion: reduce) {
+    .scroll-fade-up,
+    .scroll-left,
+    .scroll-right,
+    .scroll-scale,
+    .scroll-fade,
+    .scroll-stagger > * {
+        opacity: 1;
+        transform: none;
+        transition: none;
     }
 }
